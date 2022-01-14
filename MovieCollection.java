@@ -1,20 +1,20 @@
 package ReposFinalExam;
-public class TaskCollection {
+public class MovieCollection {
     public static void main(String[] args) {
-      
+
     }
-  
-    TaskNode root;
-  
-    public void addTask(Task v) {
-      TaskNode n = new TaskNode(v);
+
+    MovieNode root;
+
+    public void addMovie(Movie v) {
+      MovieNode n = new MovieNode(v);
       // Empty tree?
       if (root == null) {
         root = n;
         return;
       }
       // Find the appropriate location
-      TaskNode temp = root;
+      MovieNode temp = root;
       while (true) {
         if (temp.value.isGreater(v)) {
           if (temp.left == null) {
@@ -29,7 +29,7 @@ public class TaskCollection {
             break;
           } else {
             temp = temp.right;
-          }        
+          }
         }
       }
     }
@@ -51,8 +51,8 @@ public class TaskCollection {
     }
   
     public Movie search(String code) {
-      TaskNode temp = root;
-      Task v = new Task("abc", code);
+      MovieNode temp = root;
+      Movie v = new Movie("abc", code);
       while (true) {
         if (temp.value.code.equals(code)) {
           return temp.value;
